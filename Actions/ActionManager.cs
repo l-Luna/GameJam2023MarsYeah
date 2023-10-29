@@ -10,7 +10,7 @@ public static class ActionManager {
 		new InsultOpponent(),
 		new InsultOpponent(),
 		new InsultOpponent(),
-		new InsultOpponent()
+		new Disinformation()
 	};
 
 	public static List<Action> GetValidActions(GameState state, int amount){

@@ -10,7 +10,7 @@ public abstract class Action{
 		ActionText = filename; // for now
 	}
 
-	public abstract void OnSelect(GameState state);
+	public virtual void OnSelect(GameState state){}
 
 	public abstract int GetPopularityEffect(GameState state);
 
