@@ -35,7 +35,7 @@ public partial class ActionSetHandler : Node{
 			var a = actions[idx];
 			Button b = new Button();
 			b.Text = a.ActionText;
-			b.Position = new Vector2(10, 10 + 50 * idx);
+			b.Position = new Vector2(IsHumanSide ? -3000 : 3000, 12);
 			b.ButtonDown += () => {
 				a.OnSelect(state);
 				state.InvokeActionChosen();
@@ -48,6 +48,9 @@ public partial class ActionSetHandler : Node{
 				// camera pan
 				GetTree().CallGroup("GameHandler", "pan_camera");
 			};
+			Tween fanOut = GetTree().CreateTween().SetTrans(Tween.TransitionType.Sine);
+			fanOut.TweenInterval(0.3f * idx);
+			fanOut.TweenProperty(b, "position", new Vector2(10, 10 + 50 * idx), 0.5f);
 			AddChild(b);
 			ActionButtons.Add(b);
 		}
