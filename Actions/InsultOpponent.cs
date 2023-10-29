@@ -1,9 +1,8 @@
 ﻿namespace GameJam2023MarsYeah.Actions;
 
 public class InsultOpponent : Action{
-	private const string ActionTextFileName = "res://Actions/InsultOpponent.txt";
 
-	public InsultOpponent() : base(ActionTextFileName) {}
+	public InsultOpponent() : base("action.insult") {}
 
 	public override void OnSelect(GameState state){}
 

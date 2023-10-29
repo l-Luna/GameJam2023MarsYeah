@@ -17,5 +17,7 @@ public partial class GameState : Node{
 		// TODO: expose seed through UI
 		Rng = new RandomNumberGenerator();
 		Rng.Randomize();
+		
+		Dialog.Setup();
 	}
 }
