@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://b55n8i3wx3x2a"]
+
+[ext_resource type="Script" path="res://Scripts/GDScript/opinion_bar.gd" id="1_43da5"]
+[ext_resource type="Texture2D" uid="uid://cnufspgac24im" path="res://Assets/healthbarHalf.png" id="1_722ql"]
+[ext_resource type="Texture2D" uid="uid://khnr1qf0xq5m" path="res://Assets/healthbarProgressHalf.png" id="2_fchpr"]
+[ext_resource type="Texture2D" uid="uid://c1udd6ebddxua" path="res://Assets/healthbarHalf - Copy.png" id="3_o6wl5"]
+[ext_resource type="Texture2D" uid="uid://ce0cw02hwrcnm" path="res://Assets/healthbarProgressHalf - Copy.png" id="4_l27ln"]
+
+[node name="OpinionBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_43da5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 10.0
+scale = Vector2(3, 3)
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="EarthBias" type="TextureProgressBar" parent="HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 10
+fill_mode = 1
+texture_under = ExtResource("1_722ql")
+texture_progress = ExtResource("2_fchpr")
+
+[node name="MarsBias" type="TextureProgressBar" parent="HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture_under = ExtResource("3_o6wl5")
+texture_progress = ExtResource("4_l27ln")
