@@ -1,6 +1,4 @@
-﻿using Godot;
-
-namespace GameJam2023MarsYeah.Actions;
+﻿namespace GameJam2023MarsYeah.Actions;
 
 public abstract class Action{
 
@@ -10,7 +8,15 @@ public abstract class Action{
 		ActionText = filename; // for now
 	}
 
-	public virtual void OnSelect(GameState state){}
+	public virtual void OnSelect(GameState state){
+		if(state.IsHumanTurn){
+			state.MartianHealth -= GetDamage(state);
+			state.Opinion -= GetPopularityEffect(state);
+		}else{
+			state.HumanHealth -= GetDamage(state);
+			state.Opinion += GetPopularityEffect(state);
+		}
+	}
 
 	public abstract int GetPopularityEffect(GameState state);
 
