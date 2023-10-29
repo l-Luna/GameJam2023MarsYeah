@@ -60,37 +60,65 @@ _data = {
 [node name="Game Handler" type="Node2D"]
 script = ExtResource("1_iei4d")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 offset_right = 3837.0
 offset_bottom = 1080.0
 texture = ExtResource("2_eu3e8")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -6.0
+offset_top = -4.0
+offset_right = 3838.0
+offset_bottom = 1076.0
 
 [node name="Human" type="HBoxContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Human"]
+[node name="Human sprite" type="TextureRect" parent="HBoxContainer/Human"]
 layout_mode = 2
 size_flags_horizontal = 0
 texture = ExtResource("3_gfdo6")
 expand_mode = 3
 
-[node name="Martian" type="Control" parent="HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Human"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 40
+
+[node name="Human UI" type="PanelContainer" parent="HBoxContainer/Human/MarginContainer"]
+modulate = Color(0, 0, 0, 0.803922)
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Martian" type="HBoxContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
+alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Martian"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Martian"]
 layout_mode = 2
-offset_left = 1245.0
-offset_top = 78.0
-offset_right = 3975.0
-offset_bottom = 4078.0
-scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 40
+
+[node name="Martian UI" type="PanelContainer" parent="HBoxContainer/Martian/MarginContainer"]
+modulate = Color(0, 0, 0, 0.803922)
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Martian sprite" type="TextureRect" parent="HBoxContainer/Martian"]
+layout_mode = 2
+size_flags_horizontal = 8
 texture = ExtResource("4_gtwp0")
+expand_mode = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
