@@ -16,9 +16,10 @@ public partial class SceneHandler : Node{
 		AddChild(scene);
 	}
 
-	public void ToGameWon(Node from){
+	public void ToGameWon(Node from, bool humansWon){
 		from.QueueFree();
 		var gameEndScene = GD.Load<PackedScene>("res://Scenes/game_won.tscn").Instantiate();
+		gameEndScene.Call("set_player_won", humansWon ? "Humans" : "Martians");
 		AddChild(gameEndScene);
 	}
 

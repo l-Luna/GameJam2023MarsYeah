@@ -31,7 +31,7 @@ public partial class GameState : Node{
 		// if we're about to win, jump to the game over menu
 		if(HumanHealth == 0 || MartianHealth == 0){
 			if(GetNode("/root/Scene Handler") is SceneHandler sc)
-				sc.ToGameWon(GetNode("/root/Scene Handler/Game Handler"));
+				sc.ToGameWon(GetNode("/root/Scene Handler/Game Handler"), MartianHealth == 0);
 			Reset();
 		}else
 			OnActionChosen?.Invoke();
