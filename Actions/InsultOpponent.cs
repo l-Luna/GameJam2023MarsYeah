@@ -2,9 +2,7 @@
 
 public class InsultOpponent : Action{
 
-	public InsultOpponent() : base("action.insult") {}
-
-	public override void OnSelect(GameState state){}
+	public InsultOpponent() : base("Insult Opponent") {}
 
 	public override int GetPopularityEffect(GameState state) => 10;
 
