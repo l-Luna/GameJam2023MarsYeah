@@ -17,9 +17,10 @@ func _input(event):
 		
 
 func pan_camera():
-	if camera.offset == Vector2.ZERO:
+	# IsHumanTurn is switched just before pan_camera is called
+	if !$"/root/GameState".IsHumanTurn:
 		animation_player.play("pan_to_martian")
-	elif camera.offset == Vector2(1920,0):
+	else:
 		animation_player.play("pan_to_human")
 	
 	
