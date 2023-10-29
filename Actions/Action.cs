@@ -1,14 +1,23 @@
-﻿namespace GameJam2023MarsYeah.Actions;
+﻿using Godot;
 
-public abstract class Action{
+namespace GameJam2023MarsYeah.Actions;
+
+public abstract class Action
+{
+	public string ActionText { get; private set; }
+
+	protected Action(string filename)
+	{
+		ActionText = FileAccess.GetFileAsString(filename);
+	}
 
 	public abstract void OnSelect(GameState state);
 
-	public abstract int PopularityEffect();
+	public abstract int GetPopularityEffect(GameState state);
 
-	public abstract int Damage();
+	public abstract int GetDamage(GameState state);
 
-	public abstract bool CanUse(GameState state);
+	public abstract bool CanBeUsed(GameState state);
 
-	public abstract float Probability(GameState state);
+	public abstract float GetProbability(GameState state);
 }
