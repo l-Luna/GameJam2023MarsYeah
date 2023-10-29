@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbuk63nhcj58d"]
+[gd_scene load_steps=3 format=3 uid="uid://bam5km87odmib"]
 
 [ext_resource type="Script" path="res://Scripts/CSharp/QuitButton.cs" id="2_qduti"]
 [ext_resource type="Theme" uid="uid://balvey087ppcx" path="res://Themes/main_menu.tres" id="2_s5rgr"]
