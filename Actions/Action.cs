@@ -34,7 +34,7 @@ public abstract class Action
 
 	public abstract bool CanBeUsed(GameState state);
 
-	public abstract float GetProbability(GameState state);
+	public abstract int GetProbability(GameState state);
 
 	protected void CapStats(GameState state)
 	{

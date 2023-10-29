@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dkxa5xdy0mg3c"]
+
+[ext_resource type="FontFile" uid="uid://ngr0di1m70r2" path="res://Fonts/nasalization/nasalization-rg.otf" id="1_yk8wb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5fhf"]
+bg_color = Color(1, 1, 0.941176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojgyc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gaqnt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtjl1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3fhr"]
+
+[resource]
+default_font_size = 40
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_yk8wb")
+Button/styles/disabled = SubResource("StyleBoxFlat_f5fhf")
+Button/styles/focus = SubResource("StyleBoxFlat_ojgyc")
+Button/styles/hover = SubResource("StyleBoxFlat_gaqnt")
+Button/styles/normal = SubResource("StyleBoxFlat_gtjl1")
+Button/styles/pressed = SubResource("StyleBoxFlat_f3fhr")

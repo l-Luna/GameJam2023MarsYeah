@@ -9,7 +9,7 @@ public partial class ActionSetHandler : Node{
 	[Export]
 	public bool IsHumanSide;
 
-	private readonly List<Button> ActionButtons = new();
+	private readonly List<Button> _actionButtons = new();
 
 	public override void _Ready(){
 		base._Ready();
@@ -17,9 +17,9 @@ public partial class ActionSetHandler : Node{
 	}
 
 	public void RemoveButtons(){
-		foreach(Button b in ActionButtons)
+		foreach(Button b in _actionButtons)
 			b.QueueFree();
-		ActionButtons.Clear();
+		_actionButtons.Clear();
 	}
 
 	public void RefreshActions(){
@@ -29,13 +29,13 @@ public partial class ActionSetHandler : Node{
 		// remove existing ones
 		RemoveButtons();
 		// find new actions
-		List<Action> actions = ActionManager.GetValidActions(state, 3);
+		List<Action> actions = ActionManager.GetValidActions(state);
 		// create buttons for each of them
 		for(var idx = 0; idx < actions.Count; idx++){
 			var a = actions[idx];
 			Button b = new Button();
 			b.Text = a.TitleText;
-			b.Position = new Vector2(IsHumanSide ? -3000 : 3000, 12);
+			// b.Position = new Vector2(IsHumanSide ? -3000 : 3000, 12);
 			b.ButtonDown += () => {
 				a.OnSelect(state);
 				state.InvokeActionChosen(a);
@@ -50,11 +50,11 @@ public partial class ActionSetHandler : Node{
 				GetTree().CallGroup("GameHandler", "pan_camera");
 			};
 			b.MouseEntered += () => SetFlavourText(a.FlavourText);
-			Tween fanOut = GetTree().CreateTween().SetTrans(Tween.TransitionType.Sine);
-			fanOut.TweenInterval(0.3f * idx);
-			fanOut.TweenProperty(b, "position", new Vector2(10, 10 + 50 * idx), 0.5f);
+			// Tween fanOut = GetTree().CreateTween().SetTrans(Tween.TransitionType.Sine);
+			// fanOut.TweenInterval(0.3f * idx);
+			// fanOut.TweenProperty(b, "position", new Vector2(10, 10 + 50 * idx), 0.5f);
 			AddChild(b);
-			ActionButtons.Add(b);
+			_actionButtons.Add(b);
 		}
 	}
 
