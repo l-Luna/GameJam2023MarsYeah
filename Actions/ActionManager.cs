@@ -9,7 +9,7 @@ public static class ActionManager {
 	public static readonly List<Action> All = new(){
 		new InsultOpponent(),
 		new InsultOpponent(),
-		new InsultOpponent(),
+		new DebugDamage(),
 		new Disinformation()
 	};
 
