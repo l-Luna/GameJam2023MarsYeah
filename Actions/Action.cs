@@ -1,4 +1,5 @@
 ﻿using System;
+using GameJam2023MarsYeah.Statuses;
 
 namespace GameJam2023MarsYeah.Actions;
 
@@ -34,7 +35,11 @@ public abstract class Action
 
 	public abstract bool CanBeUsed(GameState state);
 
-	public abstract int GetProbability(GameState state);
+	public abstract float GetProbability(GameState state);
+
+	public abstract Status GetStatusEffect();
+
+	public virtual bool StatusEnded() => false;
 
 	protected void CapStats(GameState state)
 	{

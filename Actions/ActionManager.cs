@@ -7,13 +7,13 @@ namespace GameJam2023MarsYeah.Actions;
 public static class ActionManager {
 
 	private static readonly List<Action> All = new(){
-		new Insult(),
-		new DebugDamage(),
+		new Crackdown(),
 		new Disinformation(),
 		new Education(),
-		new Memes(),
 		new Elon(),
-		new Factories()
+		new Factories(),
+		new Insult(),
+		new Memes()
 	};
 
 	public static List<Action> GetValidActions(GameState state){

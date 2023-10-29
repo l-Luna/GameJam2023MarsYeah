@@ -1,3 +1,5 @@
+using GameJam2023MarsYeah.Statuses;
+
 namespace GameJam2023MarsYeah.Actions;
 
 public class Factories : Action{
@@ -6,9 +8,11 @@ public class Factories : Action{
 
 	public override int GetPopularityEffect(GameState state) => 0;
 
-	public override int GetDamage(GameState state) => 10;
+	public override int GetDamage(GameState state) => 0;
 
 	public override bool CanBeUsed(GameState state) => state.IsHumanTurn;
 
-	public override int GetProbability(GameState state) => 1;
+	public override float GetProbability(GameState state) => 1;
+	public override Status GetStatusEffect() => null;
+	public override bool StatusEnded() => true;
 }

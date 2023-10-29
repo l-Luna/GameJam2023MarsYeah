@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using GameJam2023MarsYeah.Scripts.CSharp;
+using GameJam2023MarsYeah.Statuses;
 using Godot;
 using Action = GameJam2023MarsYeah.Actions.Action;
 
@@ -15,6 +16,7 @@ public partial class GameState : Node{
 	public bool IsHumanTurn = true;
 
 	private HashSet<Type> _usedActions = new();
+	private HashSet<Status> _activeStatuses = new();
 
 	public RandomNumberGenerator Rng;
 
@@ -33,6 +35,7 @@ public partial class GameState : Node{
 	public event System.Action OnActionChosen;
 
 	public void InvokeActionChosen(Action action){
+		ResolveStatuses(this);
 		// if we're about to win, jump to the game over menu
 		if(HumanHealth == 0 || MartianHealth == 0){
 			if(GetNode("/root/Scene Handler") is SceneHandler sc)
@@ -43,7 +46,37 @@ public partial class GameState : Node{
 		{
 			OnActionChosen?.Invoke();
 			_usedActions.Add(action.GetType());
+			Status status = action.GetStatusEffect();
+			if (action.StatusEnded() == true) RemoveStatus(status);
+			else if (status != null) AddStatus(status);
 		}
+	}
+
+	private void AddStatus(Status status)
+	{
+		_activeStatuses.Add(status);
+	}
+
+	private void RemoveStatus(Status status)
+	{
+		_activeStatuses.Remove(status);
+	}
+
+	private void ResolveStatuses(GameState state)
+	{
+		foreach (Status status in _activeStatuses)
+		{
+			status.Apply(state);
+		}
+	}
+
+	public bool StatusActive(Type statusType)
+	{
+		foreach (Status status in _activeStatuses)
+		{
+			if (status.GetType() == statusType) return true;
+		}
+		return false;
 	}
 
 	public bool ActionUsed(Type t) => _usedActions.Contains(t);

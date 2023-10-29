@@ -1,4 +1,6 @@
-﻿namespace GameJam2023MarsYeah.Actions;
+﻿using GameJam2023MarsYeah.Statuses;
+
+namespace GameJam2023MarsYeah.Actions;
 
 public class Insult : Action{
 
@@ -10,5 +12,8 @@ public class Insult : Action{
 
 	public override bool CanBeUsed(GameState state) => !state.IsHumanTurn;
 
-	public override int GetProbability(GameState state) => 1;
+	public override float GetProbability(GameState state) => 1;
+
+	public override Status GetStatusEffect() => null;
+	public override bool StatusEnded() => true;
 }
