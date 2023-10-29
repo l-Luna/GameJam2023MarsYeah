@@ -1,16 +1,20 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6u4ffd0tc2bj"]
+[gd_scene load_steps=20 format=3 uid="uid://b6u4ffd0tc2bj"]
 
 [ext_resource type="Script" path="res://Scripts/GDScript/game_handler.gd" id="1_iei4d"]
 [ext_resource type="Texture2D" uid="uid://b6j8ptpqva5dp" path="res://Assets/city.jpg" id="2_p5dle"]
 [ext_resource type="Texture2D" uid="uid://bfbc5qowpxng7" path="res://Assets/mars_surface.jpg" id="3_6vwvv"]
-[ext_resource type="Texture2D" uid="uid://dlap1goyiank5" path="res://Assets/human.png" id="3_gfdo6"]
 [ext_resource type="PackedScene" uid="uid://m5uv777uikq8" path="res://Scenes/action_set.tscn" id="4_8e24d"]
-[ext_resource type="Texture2D" uid="uid://lxvlrg7hnqjm" path="res://Assets/martian.png" id="4_gtwp0"]
+[ext_resource type="Texture2D" uid="uid://ckpepqmp0d4du" path="res://Assets/suit_sketch.png" id="4_875yx"]
 [ext_resource type="PackedScene" uid="uid://b55n8i3wx3x2a" path="res://Scenes/opinion_bar.tscn" id="7_1wu7l"]
-[ext_resource type="PackedScene" path="res://Scenes/health_bar.tscn" id="7_pkg8d"]
+[ext_resource type="PackedScene" uid="uid://byjd3vxbcss1u" path="res://Scenes/health_bar.tscn" id="7_pkg8d"]
+[ext_resource type="Texture2D" uid="uid://ba3t61k2puqak" path="res://Assets/martian_sketch.png" id="7_svlsc"]
 [ext_resource type="FontFile" uid="uid://ngr0di1m70r2" path="res://Fonts/nasalization/nasalization-rg.otf" id="9_83gcn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mdwji"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2hor5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wucxy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x4ulw"]
 
@@ -111,7 +115,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_mdwji")
 [node name="Human sprite" type="TextureRect" parent="HBoxContainer/Human/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("3_gfdo6")
+texture = ExtResource("4_875yx")
 expand_mode = 3
 
 [node name="Health" type="MarginContainer" parent="HBoxContainer/Human/PanelContainer"]
@@ -137,10 +141,11 @@ theme_override_constants/margin_bottom = 40
 
 [node name="Human UI" type="PanelContainer" parent="HBoxContainer/Human/MarginContainer"]
 modulate = Color(0, 0, 0, 0.803922)
-custom_minimum_size = Vector2(1000, 800)
+custom_minimum_size = Vector2(750, 500)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2hor5")
 
 [node name="action_set" parent="HBoxContainer/Human/MarginContainer/Human UI" groups=["ActionSet"] instance=ExtResource("4_8e24d")]
 layout_mode = 2
@@ -163,10 +168,11 @@ theme_override_constants/margin_bottom = 40
 
 [node name="Martian UI" type="PanelContainer" parent="HBoxContainer/Martian/MarginContainer"]
 modulate = Color(0, 0, 0, 0.803922)
-custom_minimum_size = Vector2(1000, 800)
+custom_minimum_size = Vector2(750, 500)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wucxy")
 
 [node name="action_set" parent="HBoxContainer/Martian/MarginContainer/Martian UI" groups=["ActionSet"] instance=ExtResource("4_8e24d")]
 layout_mode = 2
@@ -178,7 +184,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_x4ulw")
 [node name="Martian sprite" type="TextureRect" parent="HBoxContainer/Martian/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
-texture = ExtResource("4_gtwp0")
+texture = ExtResource("7_svlsc")
 expand_mode = 3
 
 [node name="Health" type="MarginContainer" parent="HBoxContainer/Martian/PanelContainer"]

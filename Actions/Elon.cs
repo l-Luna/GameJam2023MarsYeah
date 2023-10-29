@@ -9,5 +9,5 @@ public class Elon : Action {
 	public override bool CanBeUsed(GameState state) =>
 		state.IsHumanTurn && state.ActionUsed(typeof(Education));
 
-	public override float GetProbability(GameState state) => 1;
+	public override int GetProbability(GameState state) => 1;
 }

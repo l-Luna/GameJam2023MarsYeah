@@ -8,5 +8,5 @@ public class Memes : Action {
 
 	public override bool CanBeUsed(GameState state) => !state.IsHumanTurn;
 
-	public override float GetProbability(GameState state) => 1;
+	public override int GetProbability(GameState state) => 1;
 }

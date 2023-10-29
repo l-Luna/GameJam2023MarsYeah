@@ -9,5 +9,5 @@ public class Disinformation : Action{
 
 	public override bool CanBeUsed(GameState state) => state.IsHumanTurn && state.Opinion < 0;
 
-	public override float GetProbability(GameState state) => 1;
+	public override int GetProbability(GameState state) => 1;
 }
