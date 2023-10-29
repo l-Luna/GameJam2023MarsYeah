@@ -7,7 +7,7 @@ namespace GameJam2023MarsYeah.Scripts;
 public partial class ActionSetHandler : Node{
 
 	private List<Button> ActionButtons = new();
-	
+
 	private void RefreshActions(){
 		GD.Print("refreshing action buttons");
 		// fetch game state
@@ -24,6 +24,11 @@ public partial class ActionSetHandler : Node{
 			Button b = new Button();
 			b.Text = a.ActionText;
 			b.Position = new Vector2(10, 10 + 50 * idx);
+			b.ButtonDown += () => {
+				a.OnSelect(state);
+				state.IsHumanTurn = !state.IsHumanTurn;
+				RefreshActions();
+			};
 			AddChild(b);
 			ActionButtons.Add(b);
 		}
