@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://bk127rdeawfi4"]
+[gd_scene load_steps=3 format=3 uid="uid://bk127rdeawfi4"]
+
+[ext_resource type="Script" path="res://Scripts/CSharp/SceneHandler.cs" id="1_l0ylm"]
+[ext_resource type="PackedScene" uid="uid://cbuk63nhcj58d" path="res://Scenes/main_menu.tscn" id="2_20jdi"]
 
 [node name="Scene Handler" type="Node"]
+script = ExtResource("1_l0ylm")
+
+[node name="Main Menu" parent="." instance=ExtResource("2_20jdi")]

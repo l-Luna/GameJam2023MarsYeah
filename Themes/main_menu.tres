@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://balvey087ppcx"]
+
+[resource]
+default_font_size = 40
+Button/font_sizes/font_size = 40
+RichTextLabel/font_sizes/normal_font_size = 100
