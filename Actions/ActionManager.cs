@@ -6,7 +6,7 @@ namespace GameJam2023MarsYeah.Actions;
 
 public static class ActionManager {
 
-	public static readonly List<Action> All = new(){
+	private static readonly List<Action> All = new(){
 		new Insult(),
 		new DebugDamage(),
 		new Disinformation(),
@@ -16,8 +16,8 @@ public static class ActionManager {
 		new Factories()
 	};
 
-	public static List<Action> GetValidActions(GameState state, int amount){
-		// all the actions where CanBeUsed returns true
+	public static List<Action> GetValidActions(GameState state){
+		int amount = All.Count / 2;
 		List<Action> valid = All.Where(x => x.CanBeUsed(state)).ToList();
 		// if we don't have enough actions, then we have a problem
 		if(amount > valid.Count)
