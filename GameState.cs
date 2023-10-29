@@ -26,15 +26,15 @@ public partial class GameState : Node{
 		Opinion = -100;
 	}
 
-	public event System.Action<Action> OnActionChosen;
+	public event System.Action OnActionChosen;
 
-	public void InvokeActionChosen(Action action){
+	public void InvokeActionChosen(){
 		// if we're about to win, jump to the game over menu
 		if(HumanHealth == 0 || MartianHealth == 0){
 			if(GetNode("/root/Scene Handler") is SceneHandler sc)
 				sc.ToGameWon(GetNode("/root/Scene Handler/Game Handler"));
 			Reset();
 		}else
-			OnActionChosen?.Invoke(action);
+			OnActionChosen?.Invoke();
 	}
 }

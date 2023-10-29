@@ -16,13 +16,18 @@ public partial class OpinionBar : Control
 		_humanBar = GetNode<TextureProgressBar>("Bars/Humans");
 		_martianBar = GetNode<TextureProgressBar>("Bars/Martians");
 		UpdateBar();
-		_state.OnActionChosen += _ => UpdateBar();
+		_state.OnActionChosen += UpdateBar;
 	}
 
 	private void UpdateBar()
 	{
 		_humanBar.Value = GetHumanOpinion();
 		_martianBar.Value = GetMartianOpinion();
+	}
+
+	public override void _ExitTree(){
+		base._ExitTree();
+		_state.OnActionChosen -= UpdateBar;
 	}
 
 	private double GetHumanOpinion() => _state.Opinion < 0 ? -_state.Opinion : 0;
