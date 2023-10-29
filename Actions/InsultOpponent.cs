@@ -2,7 +2,7 @@
 
 public class InsultOpponent : Action{
 
-	public InsultOpponent() : base("Insult Opponent") {}
+	public InsultOpponent() : base("Insult Opponent", "Insult your opponent so hard they cry") {}
 
 	public override int GetPopularityEffect(GameState state) => 10;
 

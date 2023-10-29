@@ -1,7 +1,7 @@
 ﻿namespace GameJam2023MarsYeah.Actions;
 
 public class Disinformation : Action{
-	public Disinformation() : base("Disinformation Campaign"){}
+	public Disinformation() : base("Disinformation Campaign", "Spread misinformation and harm your opponents reputation"){}
 
 	public override int GetPopularityEffect(GameState state) => 30;
 

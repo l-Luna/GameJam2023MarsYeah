@@ -168,10 +168,10 @@ offset_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 10
 
-[node name="Label" type="Label" parent="Camera2D/CanvasLayer/PanelContainer"]
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/PanelContainer" groups=["FlavourLabel"]]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "THIS IS A TEST
+text = "
 "
 label_settings = SubResource("LabelSettings_h2euk")
 
