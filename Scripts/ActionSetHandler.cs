@@ -34,13 +34,14 @@ public partial class ActionSetHandler : Node{
 		for(var idx = 0; idx < actions.Count; idx++){
 			var a = actions[idx];
 			Button b = new Button();
-			b.Text = a.ActionText;
+			b.Text = a.TitleText;
 			b.Position = new Vector2(IsHumanSide ? -3000 : 3000, 12);
 			b.ButtonDown += () => {
 				a.OnSelect(state);
 				state.InvokeActionChosen();
 				state.IsHumanTurn = !IsHumanSide;
 				RemoveButtons();
+				SetFlavourText("");
 				// enable other buttons
 				foreach(Node actionSets in GetTree().GetNodesInGroup("ActionSet"))
 					if(actionSets != this)
@@ -48,11 +49,17 @@ public partial class ActionSetHandler : Node{
 				// camera pan
 				GetTree().CallGroup("GameHandler", "pan_camera");
 			};
+			b.MouseEntered += () => SetFlavourText(a.FlavourText);
 			Tween fanOut = GetTree().CreateTween().SetTrans(Tween.TransitionType.Sine);
 			fanOut.TweenInterval(0.3f * idx);
 			fanOut.TweenProperty(b, "position", new Vector2(10, 10 + 50 * idx), 0.5f);
 			AddChild(b);
 			ActionButtons.Add(b);
 		}
+	}
+
+	private void SetFlavourText(string text){
+		if(GetTree().GetFirstNodeInGroup("FlavourLabel") is Label label)
+			label.Text = text;
 	}
 }

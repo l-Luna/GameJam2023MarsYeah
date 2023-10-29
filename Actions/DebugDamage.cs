@@ -2,7 +2,7 @@
 
 public class DebugDamage : Action{
 
-	public DebugDamage() : base("Debug Damage"){}
+	public DebugDamage() : base("Debug Damage", "Hurt your opponent with the power of Exceptions"){}
 
 	public override int GetPopularityEffect(GameState state) => 0;
 

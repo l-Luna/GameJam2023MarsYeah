@@ -2,10 +2,12 @@
 
 public abstract class Action{
 
-	public string ActionText { get; private set; }
+	public string TitleText { get; private set; }
+	public string FlavourText;
 
-	protected Action(string filename){
-		ActionText = filename; // for now
+	protected Action(string title, string flavourText){
+		TitleText = title;
+		FlavourText = flavourText;
 	}
 
 	public virtual void OnSelect(GameState state){
