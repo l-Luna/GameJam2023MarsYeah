@@ -19,6 +19,8 @@ func _input(event):
 		pan_camera()
 		
 
+
+
 func pan_camera():
 	if camera.offset == Vector2.ZERO:
 		animation_player.play("pan_to_martian")

@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6u4ffd0tc2bj"]
+[gd_scene load_steps=9 format=3 uid="uid://b6u4ffd0tc2bj"]
 
 [ext_resource type="Script" path="res://Scripts/GDScript/game_handler.gd" id="1_iei4d"]
-[ext_resource type="Texture2D" uid="uid://cbledwp03y4wa" path="res://icon.svg" id="2_ai3qb"]
+[ext_resource type="Texture2D" uid="uid://begull6rpljoj" path="res://Assets/mars-2051748_1920.png" id="2_eu3e8"]
+[ext_resource type="Texture2D" uid="uid://dlap1goyiank5" path="res://Assets/human.png" id="3_gfdo6"]
+[ext_resource type="Texture2D" uid="uid://lxvlrg7hnqjm" path="res://Assets/martian.png" id="4_gtwp0"]
 
 [sub_resource type="Animation" id="Animation_t45vn"]
 resource_name = "pan_to_martian"
@@ -58,33 +60,37 @@ _data = {
 [node name="Game Handler" type="Node2D"]
 script = ExtResource("1_iei4d")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 3837.0
+offset_bottom = 1080.0
+texture = ExtResource("2_eu3e8")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Human" type="Control" parent="HBoxContainer"]
+[node name="Human" type="HBoxContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/Human"]
-layout_mode = 0
-offset_left = 860.0
-offset_top = 422.0
-offset_right = 988.0
-offset_bottom = 550.0
-texture = ExtResource("2_ai3qb")
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("3_gfdo6")
+expand_mode = 3
 
 [node name="Martian" type="Control" parent="HBoxContainer"]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/Martian"]
-layout_mode = 0
-offset_left = 1036.0
-offset_top = 475.0
-offset_right = 1164.0
-offset_bottom = 603.0
-texture = ExtResource("2_ai3qb")
+layout_mode = 2
+offset_left = 1245.0
+offset_top = 78.0
+offset_right = 3975.0
+offset_bottom = 4078.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_gtwp0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
