@@ -11,7 +11,7 @@ public static class ActionManager {
 	};
 
 	public static List<Action> GetValidActions(GameState state, int amount){
-		// all the actions where CanTrue returns true
+		// all the actions where CanBeUsed returns true
 		List<Action> valid = All.Where(x => x.CanBeUsed(state)).ToList();
 		// if we don't have enough actions, then we have a problem
 		if(amount > valid.Count)
