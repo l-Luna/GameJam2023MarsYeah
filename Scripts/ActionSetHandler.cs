@@ -33,6 +33,7 @@ public partial class ActionSetHandler : Node{
 			b.Position = new Vector2(10, 10 + 50 * idx);
 			b.ButtonDown += () => {
 				a.OnSelect(state);
+				OnActionChosen?.Invoke();
 				state.IsHumanTurn = !IsHumanSide;
 				RemoveButtons();
 				// enable other buttons
@@ -44,4 +45,8 @@ public partial class ActionSetHandler : Node{
 			ActionButtons.Add(b);
 		}
 	}
+
+	[Signal]
+	public delegate void ActionChosenEventHandler();
+	public event ActionChosenEventHandler OnActionChosen;
 }
