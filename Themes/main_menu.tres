@@ -1,6 +1,9 @@
-[gd_resource type="Theme" format=3 uid="uid://balvey087ppcx"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://balvey087ppcx"]
+
+[ext_resource type="FontFile" uid="uid://ngr0di1m70r2" path="res://Fonts/nasalization/nasalization-rg.otf" id="1_exmyx"]
 
 [resource]
 default_font_size = 40
 Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_exmyx")
 RichTextLabel/font_sizes/normal_font_size = 100
