@@ -18,4 +18,10 @@ public partial class GameState : Node{
 		Rng = new RandomNumberGenerator();
 		Rng.Randomize();
 	}
+
+	[Signal]
+	public delegate void ActionChosenEventHandler();
+	public event ActionChosenEventHandler OnActionChosen;
+
+	public void InvokeActionChosen() => OnActionChosen?.Invoke();
 }
