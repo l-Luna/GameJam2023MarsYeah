@@ -17,6 +17,6 @@ offset_left = 781.528
 offset_top = 313.341
 offset_right = 789.528
 offset_bottom = 321.341
-text = "fewrfegredger"
+text = "Reroll"
 
 [connection signal="button_down" from="Button" to="." method="RefreshActions"]

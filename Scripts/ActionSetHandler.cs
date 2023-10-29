@@ -6,16 +6,23 @@ namespace GameJam2023MarsYeah.Scripts;
 
 public partial class ActionSetHandler : Node{
 
+	[Export]
+	public bool IsHumanSide;
+
 	private List<Button> ActionButtons = new();
+
+	private void RemoveButtons(){
+		foreach(Button b in ActionButtons)
+			b.QueueFree();
+		ActionButtons.Clear();
+	}
 
 	private void RefreshActions(){
 		GD.Print("refreshing action buttons");
 		// fetch game state
 		GameState state = GetNode<GameState>("/root/GameState");
 		// remove existing ones
-		foreach(Button b in ActionButtons)
-			b.QueueFree();
-		ActionButtons.Clear();
+		RemoveButtons();
 		// find new actions
 		List<Action> actions = ActionManager.GetValidActions(state, 3);
 		// create buttons for each of them
@@ -26,8 +33,12 @@ public partial class ActionSetHandler : Node{
 			b.Position = new Vector2(10, 10 + 50 * idx);
 			b.ButtonDown += () => {
 				a.OnSelect(state);
-				state.IsHumanTurn = !state.IsHumanTurn;
-				RefreshActions();
+				state.IsHumanTurn = !IsHumanSide;
+				RemoveButtons();
+				// enable other buttons
+				Node gameHandler = GetNode("/root/Game Handler");
+				// camera pan
+				gameHandler.Call("pan_camera");
 			};
 			AddChild(b);
 			ActionButtons.Add(b);
