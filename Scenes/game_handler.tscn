@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6u4ffd0tc2bj"]
+[gd_scene load_steps=12 format=3 uid="uid://b6u4ffd0tc2bj"]
 
 [ext_resource type="Script" path="res://Scripts/GDScript/game_handler.gd" id="1_iei4d"]
 [ext_resource type="Texture2D" uid="uid://begull6rpljoj" path="res://Assets/mars-2051748_1920.png" id="2_eu3e8"]
 [ext_resource type="Texture2D" uid="uid://dlap1goyiank5" path="res://Assets/human.png" id="3_gfdo6"]
 [ext_resource type="Texture2D" uid="uid://lxvlrg7hnqjm" path="res://Assets/martian.png" id="4_gtwp0"]
+[ext_resource type="Texture2D" uid="uid://csyp7gj43ut7e" path="res://Assets/healthbarUnder.png" id="5_rhphv"]
+[ext_resource type="Texture2D" uid="uid://cs1ys0ijcp7kv" path="res://Assets/healthbarProgress.png" id="6_xhj8f"]
+[ext_resource type="Script" path="res://Scenes/TextureProgressHealthBar.gd" id="7_12fej"]
 
 [sub_resource type="Animation" id="Animation_civ45"]
 length = 0.001
@@ -60,37 +63,65 @@ _data = {
 [node name="Game Handler" type="Node2D"]
 script = ExtResource("1_iei4d")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 offset_right = 3837.0
 offset_bottom = 1080.0
 texture = ExtResource("2_eu3e8")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -6.0
+offset_top = -4.0
+offset_right = 3838.0
+offset_bottom = 1076.0
 
 [node name="Human" type="HBoxContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Human"]
+[node name="Human sprite" type="TextureRect" parent="HBoxContainer/Human"]
 layout_mode = 2
 size_flags_horizontal = 0
 texture = ExtResource("3_gfdo6")
 expand_mode = 3
 
-[node name="Martian" type="Control" parent="HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Human"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 40
+
+[node name="Human UI" type="PanelContainer" parent="HBoxContainer/Human/MarginContainer"]
+modulate = Color(0, 0, 0, 0.803922)
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Martian" type="HBoxContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
+alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Martian"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Martian"]
 layout_mode = 2
-offset_left = 1245.0
-offset_top = 78.0
-offset_right = 3975.0
-offset_bottom = 4078.0
-scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 40
+
+[node name="Martian UI" type="PanelContainer" parent="HBoxContainer/Martian/MarginContainer"]
+modulate = Color(0, 0, 0, 0.803922)
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Martian sprite" type="TextureRect" parent="HBoxContainer/Martian"]
+layout_mode = 2
+size_flags_horizontal = 8
 texture = ExtResource("4_gtwp0")
+expand_mode = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
@@ -99,3 +130,14 @@ position = Vector2(960, 540)
 libraries = {
 "": SubResource("AnimationLibrary_wfryn")
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+offset_right = 64.0
+offset_bottom = 15.0
+value = 100.0
+texture_under = ExtResource("5_rhphv")
+texture_progress = ExtResource("6_xhj8f")
+script = ExtResource("7_12fej")
+player = NodePath("../../HBoxContainer/Human")
