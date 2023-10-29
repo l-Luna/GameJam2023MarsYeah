@@ -1,3 +1,4 @@
+using GameJam2023MarsYeah.Actions;
 using Godot;
 
 namespace GameJam2023MarsYeah;
@@ -19,9 +20,7 @@ public partial class GameState : Node{
 		Rng.Randomize();
 	}
 
-	[Signal]
-	public delegate void ActionChosenEventHandler();
-	public event ActionChosenEventHandler OnActionChosen;
+	public event System.Action<Action> OnActionChosen;
 
-	public void InvokeActionChosen() => OnActionChosen?.Invoke();
+	public void InvokeActionChosen(Action action) => OnActionChosen?.Invoke(action);
 }
