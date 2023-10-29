@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://m5uv777uikq8"]
+[gd_scene load_steps=2 format=3 uid="uid://m5uv777uikq8"]
+
+[ext_resource type="Script" path="res://Scripts/ActionSetHandler.cs" id="1_px17g"]
 
 [node name="action_set" type="Control"]
 layout_mode = 3
@@ -7,3 +9,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_px17g")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 781.528
+offset_top = 313.341
+offset_right = 789.528
+offset_bottom = 321.341
+text = "fewrfegredger"
+
+[connection signal="button_down" from="Button" to="." method="RefreshActions"]
