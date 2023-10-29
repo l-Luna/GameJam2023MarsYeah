@@ -65,7 +65,7 @@ _data = {
 "pan_to_martian": SubResource("Animation_t45vn")
 }
 
-[node name="Game Handler" type="Node2D"]
+[node name="Game Handler" type="Node2D" groups=["GameHandler"]]
 script = ExtResource("1_iei4d")
 
 [node name="background container" type="HBoxContainer" parent="."]
@@ -120,7 +120,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="action_set" parent="HBoxContainer/Human/MarginContainer/Human UI" instance=ExtResource("4_8e24d")]
+[node name="action_set" parent="HBoxContainer/Human/MarginContainer/Human UI" groups=["ActionSet"] instance=ExtResource("4_8e24d")]
 layout_mode = 2
 
 [node name="Martian" type="HBoxContainer" parent="HBoxContainer"]
@@ -145,7 +145,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="action_set" parent="HBoxContainer/Martian/MarginContainer/Martian UI" instance=ExtResource("4_8e24d")]
+[node name="action_set" parent="HBoxContainer/Martian/MarginContainer/Martian UI" groups=["ActionSet"] instance=ExtResource("4_8e24d")]
 layout_mode = 2
 
 [node name="Martian sprite" type="TextureRect" parent="HBoxContainer/Martian"]

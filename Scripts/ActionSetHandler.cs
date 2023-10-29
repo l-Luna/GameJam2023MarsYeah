@@ -9,15 +9,20 @@ public partial class ActionSetHandler : Node{
 	[Export]
 	public bool IsHumanSide;
 
-	private List<Button> ActionButtons = new();
+	private readonly List<Button> ActionButtons = new();
 
-	private void RemoveButtons(){
+	public override void _Ready(){
+		base._Ready();
+		RefreshActions();
+	}
+
+	public void RemoveButtons(){
 		foreach(Button b in ActionButtons)
 			b.QueueFree();
 		ActionButtons.Clear();
 	}
 
-	private void RefreshActions(){
+	public void RefreshActions(){
 		GD.Print("refreshing action buttons");
 		// fetch game state
 		GameState state = GetNode<GameState>("/root/GameState");
@@ -33,12 +38,15 @@ public partial class ActionSetHandler : Node{
 			b.Position = new Vector2(10, 10 + 50 * idx);
 			b.ButtonDown += () => {
 				a.OnSelect(state);
+				state.InvokeActionChosen();
 				state.IsHumanTurn = !IsHumanSide;
 				RemoveButtons();
 				// enable other buttons
-				Node gameHandler = GetNode("/root/Game Handler");
+				foreach(Node actionSets in GetTree().GetNodesInGroup("ActionSet"))
+					if(actionSets != this)
+						actionSets.Call("RefreshActions");
 				// camera pan
-				gameHandler.Call("pan_camera");
+				GetTree().CallGroup("GameHandler", "pan_camera");
 			};
 			AddChild(b);
 			ActionButtons.Add(b);
