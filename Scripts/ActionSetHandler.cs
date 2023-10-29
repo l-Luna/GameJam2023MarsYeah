@@ -36,7 +36,7 @@ public partial class ActionSetHandler : Node{
 				state.IsHumanTurn = !IsHumanSide;
 				RemoveButtons();
 				// enable other buttons
-				Node gameHandler = GetNode("/root/Game Handler");
+				Node gameHandler = GetTree().GetFirstNodeInGroup("GameHandler");
 				// camera pan
 				gameHandler.Call("pan_camera");
 			};

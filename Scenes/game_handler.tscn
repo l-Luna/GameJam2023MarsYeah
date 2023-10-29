@@ -64,7 +64,7 @@ _data = {
 "pan_to_martian": SubResource("Animation_t45vn")
 }
 
-[node name="Game Handler" type="Node2D"]
+[node name="Game Handler" type="Node2D" groups=["GameHandler"]]
 script = ExtResource("1_iei4d")
 
 [node name="Background" type="TextureRect" parent="."]
