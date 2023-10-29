@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfpqogo6qwfls"]
 
 [ext_resource type="Script" path="res://Scenes/Textbox.gd" id="1_ne2wd"]
-[ext_resource type="FontFile" uid="uid://c4r2cqq7wlvy4" path="res://Assets/Born2bSportyV2.ttf" id="2_qhm1t"]
+[ext_resource type="FontFile" uid="uid://ngr0di1m70r2" path="res://Fonts/nasalization/nasalization-rg.otf" id="2_oftbf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6h0i"]
 bg_color = Color(0, 0, 0, 1)
@@ -46,22 +46,22 @@ layout_mode = 2
 [node name="Start" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("2_qhm1t")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("2_oftbf")
+theme_override_font_sizes/font_size = 45
 text = "*"
 
 [node name="Text" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("2_qhm1t")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("2_oftbf")
+theme_override_font_sizes/font_size = 45
 text = "Placeholder text. This is where the introduction will go to and the player is introduced to the game. "
 autowrap_mode = 3
 
 [node name="End" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("2_qhm1t")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("2_oftbf")
+theme_override_font_sizes/font_size = 45
 text = "v"
