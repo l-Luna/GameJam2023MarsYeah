@@ -1,4 +1,4 @@
-using GameJam2023MarsYeah.Actions;
+using GameJam2023MarsYeah.Scripts.CSharp;
 using Godot;
 
 namespace GameJam2023MarsYeah;
@@ -20,7 +20,20 @@ public partial class GameState : Node{
 		Rng.Randomize();
 	}
 
-	public event System.Action<Action> OnActionChosen;
+	public void Reset(){
+		HumanHealth = MartianHealth = 100;
+		Opinion = -100;
+	}
 
-	public void InvokeActionChosen(Action action) => OnActionChosen?.Invoke(action);
+	public event System.Action OnActionChosen;
+
+	public void InvokeActionChosen(){
+		// if we're about to win, jump to the game over menu
+		if(HumanHealth == 0 || MartianHealth == 0){
+			if(GetNode("/root/Scene Handler") is SceneHandler sc)
+				sc.ToGameWon(GetNode("/root/Scene Handler/Game Handler"), MartianHealth == 0);
+			Reset();
+		}else
+			OnActionChosen?.Invoke();
+	}
 }

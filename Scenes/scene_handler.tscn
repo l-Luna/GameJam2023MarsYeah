@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/CSharp/SceneHandler.cs" id="1_l0ylm"]
 [ext_resource type="PackedScene" uid="uid://bam5km87odmib" path="res://Scenes/main_menu.tscn" id="2_20jdi"]
 
-[node name="Scene Handler" type="Node"]
+[node name="Scene Handler" type="Node" groups=["SceneHandler"]]
 script = ExtResource("1_l0ylm")
 
 [node name="Main Menu" parent="." instance=ExtResource("2_20jdi")]

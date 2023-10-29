@@ -24,15 +24,22 @@ public partial class HealthBar : Control
 		_bar = GetNode<TextureProgressBar>("./Health");
 		_label = GetNode<RichTextLabel>("./Label");
 		SetText();
-		_state.OnActionChosen += _ =>
+		UpdateBar();
+		_state.OnActionChosen += UpdateBar;
+	}
+
+	public override void _ExitTree(){
+		base._ExitTree();
+		_state.OnActionChosen -= UpdateBar;
+	}
+
+	private void UpdateBar()
+	{
+		_bar.Value = Type switch
 		{
-			_bar.Value = Type switch
-			{
-				HealthBarType.Human => _state.HumanHealth,
-				HealthBarType.Martian => _state.MartianHealth,
-				_ => throw InvalidHealthBarError()
-			};
-			GD.Print("Health updated");
+			HealthBarType.Human => _state.HumanHealth,
+			HealthBarType.Martian => _state.MartianHealth,
+			_ => throw InvalidHealthBarError()
 		};
 	}
 

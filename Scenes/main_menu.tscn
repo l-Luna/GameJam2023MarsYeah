@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bam5km87odmib"]
+[gd_scene load_steps=4 format=3 uid="uid://bam5km87odmib"]
 
+[ext_resource type="Script" path="res://Scripts/GDScript/main_menu.gd" id="1_jpfim"]
 [ext_resource type="Script" path="res://Scripts/CSharp/QuitButton.cs" id="2_qduti"]
 [ext_resource type="Theme" uid="uid://balvey087ppcx" path="res://Themes/main_menu.tres" id="2_s5rgr"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jpfim")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -51,4 +53,5 @@ layout_mode = 2
 text = "Quit"
 script = ExtResource("2_qduti")
 
+[connection signal="button_down" from="VBoxContainer/Buttons/PlayButton" to="." method="_on_play_button_button_down"]
 [connection signal="pressed" from="VBoxContainer/Buttons/QuitButton" to="VBoxContainer/Buttons/QuitButton" method="_OnPressed"]
