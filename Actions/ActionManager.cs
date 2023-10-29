@@ -6,7 +6,10 @@ namespace GameJam2023MarsYeah.Actions;
 
 public static class ActionManager {
 
-	public static readonly List<Action> All = new List<Action>(){
+	public static readonly List<Action> All = new(){
+		new InsultOpponent(),
+		new InsultOpponent(),
+		new InsultOpponent(),
 		new InsultOpponent()
 	};
 
