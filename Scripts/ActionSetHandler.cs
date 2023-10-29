@@ -38,7 +38,7 @@ public partial class ActionSetHandler : Node{
 			b.Position = new Vector2(IsHumanSide ? -3000 : 3000, 12);
 			b.ButtonDown += () => {
 				a.OnSelect(state);
-				state.InvokeActionChosen(a);
+				state.InvokeActionChosen();
 				state.IsHumanTurn = !IsHumanSide;
 				RemoveButtons();
 				SetFlavourText("");

@@ -25,7 +25,12 @@ public partial class HealthBar : Control
 		_label = GetNode<RichTextLabel>("./Label");
 		SetText();
 		UpdateBar();
-		_state.OnActionChosen += _ => UpdateBar();
+		_state.OnActionChosen += UpdateBar;
+	}
+
+	public override void _ExitTree(){
+		base._ExitTree();
+		_state.OnActionChosen -= UpdateBar;
 	}
 
 	private void UpdateBar()

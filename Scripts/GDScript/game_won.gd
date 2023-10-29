@@ -12,15 +12,12 @@ func _on_quit_button_pressed():
 	get_tree().quit()
 
 func _on_back_to_menu_pressed():
-	var main_menu = load("res://Scenes/main_menu.tscn").instantiate()
-	var playButton = main_menu.get_node("VBoxContainer/Buttons/PlayButton")
-	playButton.connect("pressed", on_play_button)
-	get_parent().add_child(main_menu)
-	hide()
-	
-	
+	var sceneHandler = $"/root/Scene Handler"
+	sceneHandler.ToMainMenu(self)
+
+
 func on_play_button():
 	var new_game = load("res://Scenes/game_handler.tscn").instantiate()
 	get_parent().add_child(new_game)
 	queue_free()
-	
+
