@@ -6,7 +6,7 @@ func _ready():
 	pass # Replace with function body.
 
 func set_player_won(player):
-	$VBoxContainer/RichTextLabel.text = player + " Won"
+	$VBoxContainer/RichTextLabel.text = "[center]" + player + " Won"
 
 func _on_quit_button_pressed():
 	get_tree().quit()
