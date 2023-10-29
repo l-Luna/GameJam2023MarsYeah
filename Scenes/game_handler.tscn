@@ -1,13 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6u4ffd0tc2bj"]
+[gd_scene load_steps=13 format=3 uid="uid://b6u4ffd0tc2bj"]
 
 [ext_resource type="Script" path="res://Scripts/GDScript/game_handler.gd" id="1_iei4d"]
-[ext_resource type="Texture2D" uid="uid://cbledwp03y4wa" path="res://icon.svg" id="2_ai3qb"]
 [ext_resource type="Texture2D" uid="uid://begull6rpljoj" path="res://Assets/mars-2051748_1920.png" id="2_eu3e8"]
 [ext_resource type="Texture2D" uid="uid://dlap1goyiank5" path="res://Assets/human.png" id="3_gfdo6"]
 [ext_resource type="Texture2D" uid="uid://lxvlrg7hnqjm" path="res://Assets/martian.png" id="4_gtwp0"]
 [ext_resource type="Texture2D" uid="uid://csyp7gj43ut7e" path="res://Assets/healthbarUnder.png" id="5_rhphv"]
 [ext_resource type="Texture2D" uid="uid://cs1ys0ijcp7kv" path="res://Assets/healthbarProgress.png" id="6_xhj8f"]
 [ext_resource type="Script" path="res://Scenes/TextureProgressHealthBar.gd" id="7_12fej"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2euk"]
+font_size = 50
 
 [sub_resource type="Animation" id="Animation_civ45"]
 length = 0.001
@@ -86,8 +88,10 @@ texture = ExtResource("3_gfdo6")
 expand_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Human"]
+custom_minimum_size = Vector2(0, 880)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 0
@@ -95,9 +99,10 @@ theme_override_constants/margin_bottom = 40
 
 [node name="Human UI" type="PanelContainer" parent="HBoxContainer/Human/MarginContainer"]
 modulate = Color(0, 0, 0, 0.803922)
-custom_minimum_size = Vector2(1000, 0)
+custom_minimum_size = Vector2(1000, 800)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Martian" type="HBoxContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -105,8 +110,10 @@ layout_mode = 2
 alignment = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Martian"]
+custom_minimum_size = Vector2(0, 880)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 0
@@ -114,9 +121,10 @@ theme_override_constants/margin_bottom = 40
 
 [node name="Martian UI" type="PanelContainer" parent="HBoxContainer/Martian/MarginContainer"]
 modulate = Color(0, 0, 0, 0.803922)
-custom_minimum_size = Vector2(1000, 0)
+custom_minimum_size = Vector2(1000, 800)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Martian sprite" type="TextureRect" parent="HBoxContainer/Martian"]
 layout_mode = 2
@@ -137,9 +145,12 @@ offset_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 10
 
-[node name="TextureRect" type="TextureRect" parent="Camera2D/CanvasLayer/PanelContainer"]
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/PanelContainer"]
 layout_mode = 2
-texture = ExtResource("2_ai3qb")
+size_flags_horizontal = 4
+text = "THIS IS A TEST
+"
+label_settings = SubResource("LabelSettings_h2euk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
