@@ -20,12 +20,10 @@ func set_opinion(value):
 	elif opinion_value < 0:
 		mars_bias.value = 0
 		earth_bias.value = opinion_value*-1
-		print("biased towards earth")
 		
 	#no bias
 	elif opinion_value == 0:
 		earth_bias.value = 1
 		mars_bias.value = 1
-		print("no bias")
 		
-	print("set")
+		
