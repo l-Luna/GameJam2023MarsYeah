@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://m5uv777uikq8" path="res://Scenes/action_set.tscn" id="4_8e24d"]
 [ext_resource type="Texture2D" uid="uid://bjpxv6fml4c6p" path="res://Assets/suit-guy.png" id="4_cpbug"]
 [ext_resource type="PackedScene" uid="uid://b55n8i3wx3x2a" path="res://Scenes/opinion_bar.tscn" id="7_1wu7l"]
-[ext_resource type="PackedScene" uid="uid://byjd3vxbcss1u" path="res://Scenes/health_bar.tscn" id="7_pkg8d"]
+[ext_resource type="PackedScene" path="res://Scenes/health_bar.tscn" id="7_pkg8d"]
 [ext_resource type="Texture2D" uid="uid://cv8dp3dbw2om" path="res://Assets/martian_guy.png" id="7_qfqph"]
 [ext_resource type="FontFile" uid="uid://ngr0di1m70r2" path="res://Fonts/nasalization/nasalization-rg.otf" id="9_83gcn"]
 

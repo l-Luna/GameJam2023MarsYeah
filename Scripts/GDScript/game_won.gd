@@ -7,6 +7,9 @@ func _ready():
 
 func set_player_won(player):
 	$VBoxContainer/RichTextLabel.text = "[center]" + player + " Won"
+	if player == "Martians":
+		$Humans.hide()
+		$Martians.show()
 
 func _on_quit_button_pressed():
 	get_tree().quit()
