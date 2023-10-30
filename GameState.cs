@@ -46,7 +46,11 @@ public partial class GameState : Node{
 			GetNode("/root/AudioController").Call(IsHumanTurn ? "to_martian_theme" : "to_human_theme");
 
 			OnActionChosen?.Invoke();
-			_usedActions.Add(action.GetType());
+			var actionToRemove = action.RemoveOtherAction(this);
+			if(actionToRemove != null)
+				_usedActions.Remove(actionToRemove);
+			else
+				_usedActions.Add(action.GetType());
 		}
 	}
 

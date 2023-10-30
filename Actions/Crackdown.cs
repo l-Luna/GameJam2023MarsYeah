@@ -12,7 +12,7 @@ public class Crackdown : Action
 
 	public override int GetPopularityEffect(GameState state) => -30;
 
-	public override int GetDamage(GameState state) => 10;
+	public override int GetDamage(GameState state) => -10;
 
 	public override bool CanBeUsed(GameState state) => state.IsHumanTurn && state.ActionUsed(typeof(Protest));
 
