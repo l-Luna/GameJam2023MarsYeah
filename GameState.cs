@@ -41,6 +41,8 @@ public partial class GameState : Node{
 		}
 		else
 		{
+			GetNode("/root/AudioController").Call(IsHumanTurn ? "to_martian_theme" : "to_human_theme");
+
 			OnActionChosen?.Invoke();
 			_usedActions.Add(action.GetType());
 		}

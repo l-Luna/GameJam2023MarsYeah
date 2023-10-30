@@ -1,4 +1,6 @@
-[gd_resource type="EventAsset" load_steps=7 format=3 uid="uid://bq2lgvrscxnun"]
+[gd_scene load_steps=9 format=3 uid="uid://cpmp12f2a0dht"]
+
+[ext_resource type="Script" path="res://Scripts/GDScript/audio_controller.gd" id="1_adyyo"]
 
 [sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_smcud"]
 data1 = 2681227255
@@ -32,7 +34,7 @@ path = "parameter:/distortion"
 guid = "{f9fffc67-e99c-4a7e-953a-8d55b05df2dd}"
 name = "distortion"
 
-[resource]
+[sub_resource type="EventAsset" id="EventAsset_lxlek"]
 min_distance = 1.0
 max_distance = 20.0
 parameters = {
@@ -42,3 +44,7 @@ parameters = {
 path = "event:/MainSong"
 guid = "{2c0fdbf0-c769-4aa4-8610-aa516743b358}"
 name = "MainSong"
+
+[node name="audio_controller" type="Node"]
+script = ExtResource("1_adyyo")
+event = SubResource("EventAsset_lxlek")

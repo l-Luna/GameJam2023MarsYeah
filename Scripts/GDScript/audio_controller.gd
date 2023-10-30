@@ -1,11 +1,23 @@
 extends Node
 
+@export var event: EventAsset
 
-# Called when the node enters the scene tree for the first time.
+var instance: EventInstance
+var curTarget: int = 0
+
 func _ready():
-	pass # Replace with function body.
+	instance = FMODRuntime.create_instance(event)
+	instance.start()
+	instance.release()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func to_menu_theme():
+	instance.set_parameter_by_name("theme", 0)
+
+func to_human_theme():
+	instance.set_parameter_by_name("theme", 1)
+
+func to_martian_theme():
+	instance.set_parameter_by_name("theme", 2)
