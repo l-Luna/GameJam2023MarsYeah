@@ -5,7 +5,8 @@ namespace GameJam2023MarsYeah.Actions;
 public abstract class Action
 {
 	public string TitleText { get; private set; }
-	public string FlavourText;
+	public string FlavourText { get; private set; }
+	public virtual bool IsExclusive => false;
 
 	protected Action(string title, string flavourText)
 	{
@@ -42,4 +43,6 @@ public abstract class Action
 		state.MartianHealth = Math.Clamp(state.MartianHealth, 0, 100);
 		state.Opinion = Math.Clamp(state.Opinion, -100, 100);
 	}
+
+	public virtual Type RemoveOtherAction(GameState state) => null;
 }
