@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://b55n8i3wx3x2a"]
 
-[ext_resource type="Texture2D" uid="uid://cnufspgac24im" path="res://Assets/healthbarHalf.png" id="1_722ql"]
 [ext_resource type="Script" path="res://Scripts/CSharp/OpinionBar.cs" id="1_lebqs"]
-[ext_resource type="Texture2D" uid="uid://khnr1qf0xq5m" path="res://Assets/healthbarProgressHalf.png" id="2_fchpr"]
-[ext_resource type="Texture2D" uid="uid://c1udd6ebddxua" path="res://Assets/healthbarHalf - Copy.png" id="3_o6wl5"]
-[ext_resource type="Texture2D" uid="uid://ce0cw02hwrcnm" path="res://Assets/healthbarProgressHalf - Copy.png" id="4_l27ln"]
+[ext_resource type="Texture2D" uid="uid://bot2ub0c40vx3" path="res://Assets/opinion-back.png" id="3_5xjau"]
+[ext_resource type="Texture2D" uid="uid://dg8ntulwisft2" path="res://Assets/opinion-earth.png" id="4_44lwf"]
 [ext_resource type="Theme" uid="uid://c7xwi7lbspgax" path="res://Themes/health_bar.tres" id="4_xkniw"]
+[ext_resource type="Texture2D" uid="uid://cy6a7gl4sv48u" path="res://Assets/opinion-back-2.png" id="5_fw0a4"]
+[ext_resource type="Texture2D" uid="uid://cfwdg6yjbur3y" path="res://Assets/opinion-mars.png" id="5_jt3rw"]
 
 [node name="OpinionBar" type="VBoxContainer"]
 texture_filter = 1
@@ -38,8 +38,8 @@ value = 50.0
 allow_greater = true
 fill_mode = 1
 nine_patch_stretch = true
-texture_under = ExtResource("1_722ql")
-texture_progress = ExtResource("2_fchpr")
+texture_under = ExtResource("3_5xjau")
+texture_progress = ExtResource("4_44lwf")
 
 [node name="Martians" type="TextureProgressBar" parent="Bars"]
 custom_minimum_size = Vector2(500, 50)
@@ -48,5 +48,5 @@ size_flags_vertical = 2
 value = 50.0
 allow_greater = true
 nine_patch_stretch = true
-texture_under = ExtResource("3_o6wl5")
-texture_progress = ExtResource("4_l27ln")
+texture_under = ExtResource("5_fw0a4")
+texture_progress = ExtResource("5_jt3rw")

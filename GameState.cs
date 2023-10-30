@@ -29,6 +29,7 @@ public partial class GameState : Node{
 		HumanHealth = MartianHealth = 100;
 		Opinion = -100;
 		_usedActions.Clear();
+		IsHumanTurn = true;
 	}
 
 	public event System.Action OnActionChosen;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b6u4ffd0tc2bj"]
+[gd_scene load_steps=20 format=3 uid="uid://b6u4ffd0tc2bj"]
 
 [ext_resource type="Script" path="res://Scripts/GDScript/game_handler.gd" id="1_iei4d"]
 [ext_resource type="Texture2D" uid="uid://b6j8ptpqva5dp" path="res://Assets/city.jpg" id="2_p5dle"]
@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://m5uv777uikq8" path="res://Scenes/action_set.tscn" id="4_8e24d"]
 [ext_resource type="Texture2D" uid="uid://c8xe6d3ild850" path="res://Assets/suit_guy.png" id="4_oyojq"]
 [ext_resource type="PackedScene" uid="uid://b55n8i3wx3x2a" path="res://Scenes/opinion_bar.tscn" id="7_1wu7l"]
-[ext_resource type="PackedScene" uid="uid://cyfie7sdqv22i" path="res://Scenes/health_bar.tscn" id="7_pkg8d"]
+[ext_resource type="PackedScene" uid="uid://cyfie7sdqv22i" path="res://Scenes/health_bar (earth).tscn" id="7_pkg8d"]
 [ext_resource type="Texture2D" uid="uid://cv8dp3dbw2om" path="res://Assets/martian_guy.png" id="7_qfqph"]
-[ext_resource type="Theme" uid="uid://cwkyoaxt2okr4" path="res://Themes/martian_actions.tres" id="7_uexbk"]
+[ext_resource type="Theme" path="res://Themes/martian_actions.tres" id="7_uexbk"]
+[ext_resource type="PackedScene" uid="uid://63sn1703gjga" path="res://Scenes/health_bar (mars).tscn" id="9_3vayy"]
 [ext_resource type="FontFile" uid="uid://ngr0di1m70r2" path="res://Fonts/nasalization/nasalization-rg.otf" id="9_83gcn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mdwji"]
@@ -175,7 +176,7 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 
-[node name="HealthBar" parent="HBoxContainer/Martian/PanelContainer/Health" instance=ExtResource("7_pkg8d")]
+[node name="HealthBar" parent="HBoxContainer/Martian/PanelContainer/Health" instance=ExtResource("9_3vayy")]
 layout_mode = 2
 size_flags_horizontal = 8
 Type = 1
