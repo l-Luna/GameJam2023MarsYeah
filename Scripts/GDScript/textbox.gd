@@ -10,12 +10,12 @@ extends CanvasLayer
 var now = 0
 
 const text = [
-	"abcdefg",
-	"hijk lmnop",
-	"qrs",
-	"tuv,",
-	"w, x;",
-	"y and z"
+	"It is the year 2436, and the advancements in space exploration has lead to the possibility of the colonisation of Mars by the SpaceY corporation on earth.",
+	"In order to fulfill the wishes of their glorious and immortal leader EELON MOOSK (who exists as a brian in a vat),",
+	"The high ranking officials of SpaceY believe that it is the destiny of the human race to terraform mars into their second homeland.",
+	"However, their convictions are foiled by the resiliant Martian Resistance, who hold that Mars is their home, and SpaceY have threatened the very livelihood of the Martian citizens.",
+	"Join this conflict as either the leader of SpaceY, or the resistance, and make crucial decisions that influence the outcome of the war.",
+	"Will it be the humans or the Martians that prevail..."
 ]
 
 func _ready():
