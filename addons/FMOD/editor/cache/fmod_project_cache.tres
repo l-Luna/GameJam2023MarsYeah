@@ -1,0 +1,114 @@
+[gd_resource type="ProjectCache" load_steps=12 format=3 uid="uid://y75c0lo1uxmg"]
+
+[sub_resource type="BankAsset" id="BankAsset_lu11o"]
+file_path = "res://banks/Desktop/Master.bank"
+modified_time = 1698672038
+path = "bank:/Master"
+guid = "{debc595a-ebb3-4623-a7a9-9295f53ea38d}"
+name = "Master"
+
+[sub_resource type="BankAsset" id="BankAsset_16jie"]
+file_path = "res://banks/Desktop/Master.strings.bank"
+modified_time = 1698672038
+path = "bank:/Master.strings"
+guid = "{46a1798e-9ac8-0a61-21e0-186b04cda515}"
+name = "Master.strings"
+
+[sub_resource type="BusAsset" id="BusAsset_mvgw6"]
+path = "bus:/Reverb"
+guid = "{56cb9d11-b8b0-4ef6-a987-04c082bb0845}"
+name = "Reverb"
+
+[sub_resource type="BusAsset" id="BusAsset_rogve"]
+path = "bus:/"
+guid = "{deee6a19-c285-4662-bcea-6fd25bac947c}"
+name = "Master"
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_smcud"]
+data1 = 2681227255
+data2 = 811032104
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_47gii"]
+name = "theme"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_smcud")
+maximum = 2.0
+guid = "{02ee746e-67af-42fe-9f0e-1a48ef85f02b}"
+
+[sub_resource type="ParameterAsset" id="ParameterAsset_p7yon"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_47gii")
+path = "parameter:/theme"
+guid = "{02ee746e-67af-42fe-9f0e-1a48ef85f02b}"
+name = "theme"
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_apg50"]
+data1 = 3340759023
+data2 = 2349888255
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_5wii0"]
+name = "distortion"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_apg50")
+maximum = 1.0
+guid = "{f9fffc67-e99c-4a7e-953a-8d55b05df2dd}"
+
+[sub_resource type="ParameterAsset" id="ParameterAsset_gp7yv"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_5wii0")
+path = "parameter:/distortion"
+guid = "{f9fffc67-e99c-4a7e-953a-8d55b05df2dd}"
+name = "distortion"
+
+[sub_resource type="EventAsset" id="EventAsset_lxlek"]
+min_distance = 1.0
+max_distance = 20.0
+parameters = {
+"{02ee746e-67af-42fe-9f0e-1a48ef85f02b}": SubResource("ParameterAsset_p7yon"),
+"{f9fffc67-e99c-4a7e-953a-8d55b05df2dd}": SubResource("ParameterAsset_gp7yv")
+}
+path = "event:/MainSong"
+guid = "{2c0fdbf0-c769-4aa4-8610-aa516743b358}"
+name = "MainSong"
+
+[resource]
+banks = {
+"{46a1798e-9ac8-0a61-21e0-186b04cda515}": SubResource("BankAsset_16jie"),
+"{debc595a-ebb3-4623-a7a9-9295f53ea38d}": SubResource("BankAsset_lu11o")
+}
+events = {
+"{2c0fdbf0-c769-4aa4-8610-aa516743b358}": SubResource("EventAsset_lxlek")
+}
+busses = {
+"{56cb9d11-b8b0-4ef6-a987-04c082bb0845}": SubResource("BusAsset_mvgw6"),
+"{deee6a19-c285-4662-bcea-6fd25bac947c}": SubResource("BusAsset_rogve")
+}
+bank_tree = [{
+"children": [],
+"item_type": 3,
+"node_name": "Master",
+"path": "bank:/Master",
+"resource": SubResource("BankAsset_lu11o")
+}, {
+"children": [],
+"item_type": 3,
+"node_name": "Master.strings",
+"path": "bank:/Master.strings",
+"resource": SubResource("BankAsset_16jie")
+}]
+event_tree = [{
+"children": [],
+"item_type": 1,
+"node_name": "MainSong",
+"path": "event:/MainSong",
+"resource": SubResource("EventAsset_lxlek")
+}]
+bus_tree = [{
+"children": [{
+"children": [],
+"item_type": 4,
+"node_name": "Reverb",
+"path": "bus:/Reverb",
+"resource": SubResource("BusAsset_mvgw6")
+}],
+"item_type": 4,
+"node_name": "bus:",
+"path": "bus:/",
+"resource": SubResource("BusAsset_rogve")
+}]

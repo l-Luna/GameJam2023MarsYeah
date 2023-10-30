@@ -1,0 +1,44 @@
+[gd_resource type="EventAsset" load_steps=7 format=3 uid="uid://bq2lgvrscxnun"]
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_apg50"]
+data1 = 3340759023
+data2 = 2349888255
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_5wii0"]
+name = "distortion"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_apg50")
+maximum = 1.0
+guid = "{f9fffc67-e99c-4a7e-953a-8d55b05df2dd}"
+
+[sub_resource type="ParameterAsset" id="ParameterAsset_gp7yv"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_5wii0")
+path = "parameter:/distortion"
+guid = "{f9fffc67-e99c-4a7e-953a-8d55b05df2dd}"
+name = "distortion"
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_smcud"]
+data1 = 2681227255
+data2 = 811032104
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_47gii"]
+name = "theme"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_smcud")
+maximum = 2.0
+guid = "{02ee746e-67af-42fe-9f0e-1a48ef85f02b}"
+
+[sub_resource type="ParameterAsset" id="ParameterAsset_p7yon"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_47gii")
+path = "parameter:/theme"
+guid = "{02ee746e-67af-42fe-9f0e-1a48ef85f02b}"
+name = "theme"
+
+[resource]
+min_distance = 1.0
+max_distance = 20.0
+parameters = {
+"{02ee746e-67af-42fe-9f0e-1a48ef85f02b}": SubResource("ParameterAsset_p7yon"),
+"{f9fffc67-e99c-4a7e-953a-8d55b05df2dd}": SubResource("ParameterAsset_gp7yv")
+}
+path = "event:/MainSong"
+guid = "{2c0fdbf0-c769-4aa4-8610-aa516743b358}"
+name = "MainSong"
