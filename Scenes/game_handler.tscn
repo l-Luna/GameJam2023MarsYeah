@@ -6,9 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://m5uv777uikq8" path="res://Scenes/action_set.tscn" id="4_8e24d"]
 [ext_resource type="Texture2D" uid="uid://c8xe6d3ild850" path="res://Assets/suit_guy.png" id="4_oyojq"]
 [ext_resource type="PackedScene" uid="uid://b55n8i3wx3x2a" path="res://Scenes/opinion_bar.tscn" id="7_1wu7l"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://dc5j63v3f1usx" path="res://Scenes/health_bar.tscn" id="7_pkg8d"]
 [ext_resource type="Texture2D" uid="uid://cv8dp3dbw2om" path="res://Assets/martian_guy.png" id="7_qfqph"]
 [ext_resource type="Texture2D" uid="uid://dprjbvgyiirqw" path="res://Assets/martian_health.png" id="8_etfju"]
+=======
+[ext_resource type="PackedScene" uid="uid://cyfie7sdqv22i" path="res://Scenes/health_bar.tscn" id="7_pkg8d"]
+[ext_resource type="Texture2D" uid="uid://cv8dp3dbw2om" path="res://Assets/martian_guy.png" id="7_qfqph"]
+[ext_resource type="Theme" uid="uid://cwkyoaxt2okr4" path="res://Themes/martian_actions.tres" id="7_uexbk"]
+>>>>>>> 5abf657b6dadbc899c1a4d6d19e9bff03e792304
 [ext_resource type="FontFile" uid="uid://ngr0di1m70r2" path="res://Fonts/nasalization/nasalization-rg.otf" id="9_83gcn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mdwji"]
@@ -155,6 +161,7 @@ theme_override_constants/margin_bottom = 40
 
 [node name="action_set" parent="HBoxContainer/Martian/MarginContainer" groups=["ActionSet"] instance=ExtResource("4_8e24d")]
 layout_mode = 2
+theme = ExtResource("7_uexbk")
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Martian"]
 layout_mode = 2

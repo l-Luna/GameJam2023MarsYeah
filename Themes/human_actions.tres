@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://djta3qnynnji7"]
+
+[ext_resource type="FontFile" uid="uid://ngr0di1m70r2" path="res://Fonts/nasalization/nasalization-rg.otf" id="1_yk8wb"]
+[ext_resource type="StyleBox" uid="uid://c2bj5el4k8mt" path="res://Themes/human_action_btn.tres" id="2_utfuf"]
+
+[resource]
+default_font_size = 40
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.447059, 0.447059, 0.447059, 0.501961)
+Button/colors/font_focus_color = Color(0.556863, 0.317647, 0.160784, 1)
+Button/colors/font_hover_color = Color(0.6, 0.345098, 0.180392, 1)
+Button/colors/font_hover_pressed_color = Color(0.501961, 0.211765, 0.141176, 1)
+Button/colors/font_pressed_color = Color(0.501961, 0.211765, 0.141176, 1)
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_yk8wb")
+Button/styles/disabled = ExtResource("2_utfuf")
+Button/styles/focus = ExtResource("2_utfuf")
+Button/styles/hover = ExtResource("2_utfuf")
+Button/styles/normal = ExtResource("2_utfuf")
+Button/styles/pressed = ExtResource("2_utfuf")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://124ovotno4gx"]
+[gd_scene load_steps=14 format=3 uid="uid://124ovotno4gx"]
 
 [ext_resource type="Theme" uid="uid://balvey087ppcx" path="res://Themes/main_menu.tres" id="1_c5kyb"]
 [ext_resource type="Script" path="res://Scripts/GDScript/game_won.gd" id="1_soa8i"]
@@ -9,6 +9,54 @@
 
 [sub_resource type="Theme" id="Theme_c5qij"]
 default_font = ExtResource("3_4ulh8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xylxi"]
+bg_color = Color(0.270588, 0.517647, 0.686275, 1)
+border_width_bottom = 10
+border_color = Color(0.14902, 0.345098, 0.447059, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(1, 1, 1, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvn0d"]
+bg_color = Color(0.152941, 0.52549, 0.701961, 1)
+border_width_bottom = 10
+border_color = Color(0.027451, 0.34902, 0.458824, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_3d3e7"]
+Button/styles/hover = SubResource("StyleBoxFlat_xylxi")
+Button/styles/normal = SubResource("StyleBoxFlat_lvn0d")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufs86"]
+bg_color = Color(0.333333, 0.509804, 0.670588, 1)
+border_width_bottom = 10
+border_color = Color(0.2, 0.341176, 0.439216, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(1, 1, 1, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn1gq"]
+bg_color = Color(0.270588, 0.517647, 0.686275, 1)
+border_width_bottom = 10
+border_color = Color(0.14902, 0.345098, 0.447059, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_sxp26"]
+Button/styles/hover = SubResource("StyleBoxFlat_ufs86")
+Button/styles/normal = SubResource("StyleBoxFlat_kn1gq")
 
 [node name="GameWon" type="Control"]
 layout_mode = 3
@@ -67,10 +115,12 @@ theme_override_constants/separation = 20
 
 [node name="BackToMenu" type="Button" parent="VBoxContainer/Buttons"]
 layout_mode = 2
+theme = SubResource("Theme_3d3e7")
 text = "Back To Main Menu"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer/Buttons"]
 layout_mode = 2
+theme = SubResource("Theme_sxp26")
 text = "Quit"
 script = ExtResource("2_n4st5")
 

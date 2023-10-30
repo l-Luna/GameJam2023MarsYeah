@@ -29,4 +29,10 @@ public partial class SceneHandler : Node{
 		scene.AddToGroup("GameHandler");
 		AddChild(scene);
 	}
+
+	public void ToIntro(Node from){
+		from.QueueFree();
+		var scene = GD.Load<PackedScene>("res://Scenes/introduction_scene.tscn").Instantiate();
+		AddChild(scene);
+	}
 }

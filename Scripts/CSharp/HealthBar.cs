@@ -13,7 +13,6 @@ public partial class HealthBar : Control
 {
 	private GameState _state;
 	private TextureProgressBar _bar;
-	private RichTextLabel _label;
 
 	[Export] public HealthBarType Type;
 
@@ -22,8 +21,6 @@ public partial class HealthBar : Control
 	{
 		_state = GetNode<GameState>("/root/GameState");
 		_bar = GetNode<TextureProgressBar>("./Health");
-		_label = GetNode<RichTextLabel>("./Label");
-		SetText();
 		UpdateBar();
 		_state.OnActionChosen += UpdateBar;
 	}
@@ -41,17 +38,6 @@ public partial class HealthBar : Control
 			HealthBarType.Martian => _state.MartianHealth,
 			_ => throw InvalidHealthBarError()
 		};
-	}
-
-	private void SetText()
-	{
-		string labelText = Type switch
-		{
-			HealthBarType.Human => "Humans",
-			HealthBarType.Martian => "Martians",
-			_ => throw InvalidHealthBarError()
-		};
-		_label.Text = "[center]" + labelText + "[/center]";
 	}
 
 	private static Exception InvalidHealthBarError() =>
