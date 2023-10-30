@@ -4,11 +4,14 @@
 [ext_resource type="Theme" uid="uid://dkxa5xdy0mg3c" path="res://Themes/actions.tres" id="2_5vl7r"]
 
 [node name="action_set" type="VBoxContainer"]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("2_5vl7r")
 theme_override_constants/separation = 50
 alignment = 1

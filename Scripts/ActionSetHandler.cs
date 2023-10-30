@@ -35,6 +35,8 @@ public partial class ActionSetHandler : Node{
 			var a = actions[idx];
 			Button b = new Button();
 			b.Text = a.TitleText;
+			b.CustomMinimumSize = new Vector2(750, 150);
+			b.UpdateMinimumSize();
 			// b.Position = new Vector2(IsHumanSide ? -3000 : 3000, 12);
 			b.ButtonDown += () => {
 				a.OnSelect(state);
