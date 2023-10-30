@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyfie7sdqv22i"]
 
-[ext_resource type="Texture2D" uid="uid://csyp7gj43ut7e" path="res://Assets/healthbarUnder.png" id="1_sq78k"]
-[ext_resource type="Texture2D" uid="uid://cs1ys0ijcp7kv" path="res://Assets/healthbarProgress.png" id="2_dr7hp"]
+[ext_resource type="Texture2D" uid="uid://bjs7es3b1n082" path="res://Assets/health-back.png" id="2_epf2m"]
+[ext_resource type="Texture2D" uid="uid://db4bioircmtpa" path="res://Assets/human-health.png" id="3_f1vum"]
 [ext_resource type="Script" path="res://Scripts/CSharp/HealthBar.cs" id="3_r76m8"]
 
 [node name="HealthBar" type="VBoxContainer"]

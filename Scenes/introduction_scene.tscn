@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://uipulgtohr78"]
+[gd_scene load_steps=5 format=3 uid="uid://dfpqogo6qwfls"]
 
 [ext_resource type="Script" path="res://Scripts/GDScript/textbox.gd" id="1_f4p12"]
 [ext_resource type="FontFile" uid="uid://ngr0di1m70r2" path="res://Fonts/nasalization/nasalization-rg.otf" id="2_oftbf"]
