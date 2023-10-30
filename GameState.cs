@@ -28,6 +28,7 @@ public partial class GameState : Node{
 	public void Reset(){
 		HumanHealth = MartianHealth = 100;
 		Opinion = -100;
+		_usedActions.Clear();
 	}
 
 	public event System.Action OnActionChosen;

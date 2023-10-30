@@ -52,6 +52,7 @@ public partial class ActionSetHandler : Node{
 				GetTree().CallGroup("GameHandler", "pan_camera");
 			};
 			b.MouseEntered += () => SetFlavourText(a.FlavourText);
+			b.MouseExited += () => SetFlavourText("");
 			// Tween fanOut = GetTree().CreateTween().SetTrans(Tween.TransitionType.Sine);
 			// fanOut.TweenInterval(0.3f * idx);
 			// fanOut.TweenProperty(b, "position", new Vector2(10, 10 + 50 * idx), 0.5f);
