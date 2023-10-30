@@ -67,6 +67,8 @@ theme_override_fonts/font = ExtResource("2_oftbf")
 theme_override_font_sizes/font_size = 45
 text = "v"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TextboxContainer"]
+
 [node name="Mars-20517481920" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(964, 541)
