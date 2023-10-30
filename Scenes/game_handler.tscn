@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b6j8ptpqva5dp" path="res://Assets/city.jpg" id="2_p5dle"]
 [ext_resource type="Texture2D" uid="uid://bfbc5qowpxng7" path="res://Assets/mars_surface.jpg" id="3_6vwvv"]
 [ext_resource type="PackedScene" uid="uid://m5uv777uikq8" path="res://Scenes/action_set.tscn" id="4_8e24d"]
-[ext_resource type="Texture2D" uid="uid://bjpxv6fml4c6p" path="res://Assets/suit-guy.png" id="4_cpbug"]
+[ext_resource type="Texture2D" uid="uid://c8xe6d3ild850" path="res://Assets/suit_guy.png" id="4_oyojq"]
 [ext_resource type="PackedScene" uid="uid://b55n8i3wx3x2a" path="res://Scenes/opinion_bar.tscn" id="7_1wu7l"]
 [ext_resource type="PackedScene" path="res://Scenes/health_bar.tscn" id="7_pkg8d"]
 [ext_resource type="Texture2D" uid="uid://cv8dp3dbw2om" path="res://Assets/martian_guy.png" id="7_qfqph"]
@@ -111,7 +111,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_mdwji")
 [node name="Human sprite" type="TextureRect" parent="HBoxContainer/Human/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("4_cpbug")
+texture = ExtResource("4_oyojq")
 expand_mode = 3
 
 [node name="Health" type="MarginContainer" parent="HBoxContainer/Human/PanelContainer"]
